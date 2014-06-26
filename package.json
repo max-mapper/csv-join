@@ -1,6 +1,6 @@
 {
   "name": "csv-join",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "join two csvs based on a 'foreign key' column",
   "bin": {
     "csv-join": "cli.js"
@@ -16,6 +16,7 @@
     "csv-parser": "^1.2.2",
     "csv-write-stream": "^0.2.0",
     "minimist": "^0.2.0",
+    "request": "^2.36.0",
     "through2": "^0.5.1"
   },
   "directories": {

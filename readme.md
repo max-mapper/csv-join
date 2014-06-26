@@ -9,8 +9,10 @@ note: `source.csv` gets buffered into memory in the current implementation. a pu
 ## usage
 
 ```js
-csv-join <source.csv> <source-column> <target.csv> <target-column>
+csv-join <source> <source-column> <target> <target-column>
 ```
+
+`source`and `target` can be either paths to local files or http/https links
 
 ## example
 

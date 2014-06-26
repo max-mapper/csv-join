@@ -3,6 +3,7 @@
 var join = require('./')
 var fs = require('fs')
 var csvWriter = require('csv-write-stream')
+var request = require('request')
 var args = require('minimist')(process.argv.slice(2))
 
 run()
@@ -13,7 +14,11 @@ function run() {
   if (!args.secondColumn) args.secondColumn = args._[3]
   var first = args._[0]
   var second = args._[2]
-
-  var joiner = join(fs.createReadStream(first), fs.createReadStream(second), args)
+  var joiner = join(getStream(first), getStream(second), args)
   joiner.pipe(csvWriter()).pipe(process.stdout)
+}
+
+function getStream(uri) {
+  if (uri.match(/^http\:\/\//)) return request(uri)
+  else return fs.createReadStream(uri)
 }
