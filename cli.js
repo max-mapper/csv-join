@@ -11,7 +11,7 @@ run()
 function run() {
   if (args._.length < 3) return console.error('Usage: csv-join <source.csv> <source-column> <target.csv> <target-column>')
   if (!args.firstColumn) args.firstColumn = args._[1]
-  if (!args.secondColumn) args.secondColumn = args._[3]
+  if (!args.secondColumn) args.secondColumn = args._[3] || args.firstColumn
   var first = args._[0]
   var second = args._[2]
   var joiner = join(getStream(first), getStream(second), args)

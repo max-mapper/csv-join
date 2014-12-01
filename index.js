@@ -17,6 +17,7 @@ module.exports = function(a, b, opts) {
     var keys = Object.keys(foreign)
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i]
+      if(key === opts.firstColumn) continue
       var y = 0
       while (ch[key]) {
         // this line looks like ascii art :)

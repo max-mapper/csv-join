@@ -7,7 +7,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "csv-join test/source.csv 'a' test/target.csv 'id'"
+    "test": "npm run test-differentkeyname && npm run test-samekeyname",
+    "test-differentkeyname": "csv-join test/source.csv 'a' test/target.csv 'id'",
+    "test-samekeyname": "csv-join test/source.csv 'a' test/target.csv"
   },
   "author": "max ogden",
   "license": "BSD",
